@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #rotateBox{
+            margin: 100px;
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        #rotateBox div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: url(http://game.gtimg.cn/images/js/delottery/g.png) no-repeat;
+            background-size: 100%
+        }
+        #rotateBox button{
+            -webkit-transition: all .2s ease;
+            background: red;
+            position: absolute;
+            z-index: 20;
+            width: 70px;
+            height: 70px;
+            color: #fff;
+            border:none;
+            border-radius: 0 80px 80px 80px;
+            left: 50%;
+            top: 50%;
+            margin-left: -35px;
+            margin-top: -35px;
+            -webkit-transform: rotate(45deg);
+            cursor: pointer;
+            outline: none;
+        }
+        #rotateBox button span{
+            font-size: 16px;
+            display: block;
+            font-weight: bold;
+            -webkit-transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="rotateBox">
+        <div id="rotContent"></div>
+        <button id="starts"><span>开始</span></button>
+    </div>
+</body>
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery.rotate/jqueryrotate.js"></script>
+<script>
+$(function(){
+    function random(min,max){
+        return (Math.random()*(max-min) + min).toFixed(2);
+    };
+    var btn = $("#starts");
+    btn.click(function(){
+        num();
+    });
+    var num = function(){
+        var rotContent =  $("#rotContent");
+        var a = random(0,10000);
+        console.log(random);
+        if(a<1250){
+            rotContent.animate({rotate: '2070'}, 5000);
+        }else if(a<2500){
+            rotContent.animate({rotate: '2115'}, 5000);
+        }else if(a<3750){
+            rotContent.animate({rotate: '2160'}, 5000);
+        } else if(a<5000){
+            rotContent.animate({rotate: '2205'}, 5000);
+        } else if(a<6250){
+            rotContent.animate({rotate: '2250'}, 5000);
+        } else if(a<7500){
+            rotContent.animate({rotate: '2295'}, 5000);
+        } else if(a<8750){
+            rotContent.animate({rotate: '2340'}, 5000);
+        } else if(a<10000){
+            rotContent.animate({rotate: '2380'}, 5000);
+        }
+    }
+})
+</script>
+
+</html>
